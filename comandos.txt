@@ -1,0 +1,25 @@
+
+#crear ambiente virtual
+
+## Para Mac 
+
+python3 -m venv .venv
+
+#=== Activar ambiente virtual===
+
+# mac .os
+
+source .venv/bin/activate
+
+#=== Instalar librerias===
+
+#En mac 
+
+pip3 install -r requirements.txt
+
+
+# estado de la branch
+git status
+
+# guardar cambios
+git add
