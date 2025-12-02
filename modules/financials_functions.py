@@ -6,7 +6,7 @@ from.backend import market_prices
 def portfolio_volatility(
         df:pd.DataFrame,
         vector_w:np.array
-) -> float:
+    ) -> float:
     
     """
     Calculo de la volatilidad de un portfolio de 
@@ -75,6 +75,7 @@ def portfolio_returns(
     return df_pivot
 
 def VaR(sigma: float, confidence: float) -> float:
+
     """
     Calculo del Value at Risk al nivel de confianza indicado.
     Con supuesta de media cero
