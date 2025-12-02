@@ -227,7 +227,8 @@ def market_prices(start_date: str=None, end_date: str=None, tickers: list=None) 
     Returns:
         pd.DataFrame: DataFrame con los precios de mercado
     """
-    query = f"""
+    query = f
+    """
     SELECT 
     FT.FECHA, FT.TICKER, DM.EMISOR, FT.PRECIO_CIERRE, DM.SECTOR, DM.MONEDA, DM.TIPO
     FROM FT_PRICES FT
@@ -240,3 +241,24 @@ def market_prices(start_date: str=None, end_date: str=None, tickers: list=None) 
     df = db.execute_query(query)
     
     return df
+
+def tickers_by_issuer(issuer:str) -> pd.DataFrame:
+    """
+    Retorna el listado de argumentos segun el emisor indicado
+    issuer (str):
+        Emisor
+    
+    Return(pd.DataFrame): tickers del emisor
+    """
+
+    query = f """
+    SELECT DISTINCT
+    EMISOR, TICKER, CATEGORIA
+    FROM DM_INSTRUMENTOS
+    WHER EMISOR = "{issuer}"
+    """
+
+    db = DB_Investments()
+    df = db.execute.query(query)
+
+    return df 
